@@ -10,9 +10,12 @@ pipeline {
                 script {
                     sh 'python3 -m pip install -U pip setuptools'
                     sh 'python3 -m pip install -r requirements.txt'
-                    sh 'cd bad'
-                    sh 'ls -la'
-                    sh './db_init.py'
+                            dir("cd") {
+                                        sh 'ls -la'
+                                        sh 'chmod +x db_init.py'
+                                        sh './db_init.py'
+                     }
+                    
                 }
             }
         }
