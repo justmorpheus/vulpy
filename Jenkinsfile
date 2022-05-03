@@ -5,14 +5,13 @@ testenv = "null"
 pipeline {
             agent any
             stages { 
-            stage("Checkout Code") {
-              steps {
+            stage('Installing packages') {
+            steps {
                 script {
-                  git branch: "master",
-                    credentialsId: 'my-credentials',
-                    url: 'https://user@github.org/myproject/sample-repo.git'
+                    sh 'pip -r requirements.txt'
+                }
             }
         }
-    }
-}
+            }
+            
 }
