@@ -8,7 +8,7 @@ pipeline {
             stage('Installing Dependency') {
             steps {
                 script {
-                    sh 'sudo apt-get install python3-setuptools -y'
+                    sh 'sudo -S apt-get install python3-setuptools -y'
                     sh 'python3 -m pip install -r requirements.txt'
                     sh 'cd bad'
                     sh './db_init.py'
