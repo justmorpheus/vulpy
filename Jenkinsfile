@@ -25,7 +25,7 @@ pipeline {
         echo 'Running trufflehog to check project history for secrets'
         sh 'rm trufflehog || true'
         sh 'docker rmi -f gesellix/trufflehog:latest  || true'
-        sh 'docker run gesellix/trufflehog --debug --json https://github.com/justmorpheus/vulpy.git > trufflehog'
+        sh 'docker run gesellix/trufflehog --json https://github.com/justmorpheus/vulpy.git > trufflehog'
         sh 'cat trufflehog'
       }
     }
