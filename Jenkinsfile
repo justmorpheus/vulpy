@@ -8,7 +8,8 @@ pipeline {
             stage('Installing packages') {
             steps {
                 script {
-                    sh 'pip -r requirements.txt'
+                    sh 'ls -la'
+                    sh 'pwd'
                 }
             }
         }
