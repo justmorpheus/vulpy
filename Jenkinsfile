@@ -29,6 +29,14 @@ pipeline {
         sh 'cat trufflehog'
       }
     }
+           stage ('Build & Deploy') {
+      steps {
+        echo 'Deploy the python application'
+        sh 'python3 vulpy.py '
+
+      }
+    }
+                        
             
-            }      
+ }      
 }
