@@ -32,7 +32,11 @@ pipeline {
            stage ('Build & Deploy') {
       steps {
         echo 'Deploy the python application'
-        sh 'python3 vulpy.py '
+                                    dir("bad") {
+                                        sh 'chmod +x vulpy.py'
+                                        sh 'python3 vulpy.py'
+                     }
+
 
       }
     }
