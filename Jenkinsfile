@@ -34,6 +34,7 @@ pipeline {
       steps {
         echo 'Deploy the python application'
                                     dir("bad") {
+                                        sh 'netstat -tlnup'
                                         sh 'chmod +x vulpy.py'
                                         sh 'python3 vulpy.py &'
                      }
