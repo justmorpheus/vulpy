@@ -10,6 +10,7 @@ pipeline {
                 script {
                     sh 'python3 -m pip install -U pip setuptools'
                     sh 'python3 -m pip install -r requirements.txt'
+                    sh ' python3 -m pip install tornado'
                             dir("bad") {
                                         sh 'ls -la'
                                         sh 'chmod +x db_init.py'
@@ -34,7 +35,7 @@ pipeline {
         echo 'Deploy the python application'
                                     dir("bad") {
                                         sh 'chmod +x vulpy.py'
-                                        sh 'python3 vulpy.py'
+                                        sh 'python3 vulpy.py &'
                      }
 
 
