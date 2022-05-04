@@ -36,8 +36,8 @@ pipeline {
                                     dir("bad") {
                                         sh 'netstat -tlnup'
                                         sh 'chmod +x vulpy.py'
-                                        sh 'python3 vulpy.py \&'
-                                        sh 'curl 0.0.0.0:5050'
+                                        sh 'python3 vulpy.py &'
+                                        sh 'curl localhost:5050'
                      }
 
 
